@@ -1,0 +1,11 @@
+route_id,agency_id,route_short_name,route_long_name,route_type,route_color
+7051-V,1,7051,Rod Plano Piloto x Luziânia (Trevo),3,Ffff00
+8001-I,2,8001,Ocidental x Brasília,3,0000FF
+9002-I,3,9002,Jardim Ingá x Brasília,3,FF4500
+1003-I,4,1003,Valparaíso x Brasília,3,800080
+2004-I,5,2004,Luziânia x Rod. Plano Piloto (Trevo),3,228B22
+310-V,3,310,Jardim Ingá x Luziânia,3,ff7b00
+310-I,3,310,Luziânia x Jardim Ingá,3,ff7300
+6001-I,3,6001,Jardim Ingá x Rod Plano Piloto,3,ffa200
+115-I,3,115,Luziânia x Jardim Ingá (P Alvorada),3,ff7300
+565-V,5,565,Ocidental x Luziânia,3,e1ff00

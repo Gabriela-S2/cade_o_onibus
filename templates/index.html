@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+<link rel="shortcut icon" href="{{ url_for('static', filename='logo.png') }}" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadê o Ônibus - Luziânia x DF</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    
+    <div id="map"></div>
+
+    <div class="sidebar">
+        <div class="search-group">
+            <h3>Planejar Viagem</h3>
+            
+            <div style="position: relative;">
+                <div class="input-box">
+                    <i class="fas fa-circle" style="color: green; font-size: 10px;"></i>
+                    <div class="input-wrapper">
+                        <input type="text" id="input-origem" placeholder="De onde?" autocomplete="off">
+                        <div id="sugestoes-origem" class="suggestions-box"></div>
+                    </div>
+                    <i class="fas fa-crosshairs" onclick="usarMinhaLocalizacao('origem')" title="Usar GPS" style="cursor: pointer; color: #666; margin-left: 8px;"></i>
+                </div>
+
+                <button onclick="inverterRota()" style="position: absolute; right: 40px; top: 38px; z-index: 10; background: white; border: 1px solid #ddd; border-radius: 50%; width: 30px; height: 30px; cursor: pointer; color: #007bff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center;">
+                    <i class="fas fa-exchange-alt" style="transform: rotate(90deg);"></i>
+                </button>
+
+                <div class="input-box">
+                    <i class="fas fa-map-marker-alt" style="color: red;"></i>
+                    <div class="input-wrapper">
+                        <input type="text" id="input-destino" placeholder="Para onde?" autocomplete="off">
+                        <div id="sugestoes-destino" class="suggestions-box"></div>
+                    </div>
+                    <i class="fas fa-crosshairs" onclick="usarMinhaLocalizacao('destino')" title="Usar GPS" style="cursor: pointer; color: #666; margin-left: 8px;"></i>
+                </div>
+            </div>
+
+            <div style="margin-bottom: 10px; display: flex; gap: 5px;">
+                <select id="select-horario" onchange="verificarHorarioPersonalizado()" style="flex: 1; padding: 8px; border-radius: 5px; border: 1px solid #ddd; background: white;">
+                    <option value="agora">🕒 Sair Agora</option>
+                    <option value="10">🕒 +10 min</option>
+                    <option value="15">🕒 +15 min</option>
+                    <option value="30">🕒 +30 min</option>
+                    <option value="60">🕒 +1 hora</option>
+                    <option value="custom">📅 Outra data/hora...</option>
+                </select>
+                
+                <input type="datetime-local" id="input-data-custom" style="display: none; flex: 1; padding: 8px; border-radius: 5px; border: 1px solid #ddd;">
+            </div>
+
+            <button onclick="buscarRotaInteligente()" style="width: 100%; padding: 12px; background: #007bff; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 14px; transition: background 0.2s;">
+                <i class="fas fa-search"></i> Buscar Melhor Rota
+            </button>
+        </div>
+
+        <div class="schedule-title">PRÓXIMAS PARTIDAS</div>
+        
+        <div id="lista-onibus">
+            <div style="text-align: center; color: #999; margin-top: 20px;">
+                <i class="fas fa-spinner fa-spin"></i> Carregando frota...
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
