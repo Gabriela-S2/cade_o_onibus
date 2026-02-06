@@ -1,6 +1,7 @@
 <h1>🚌 Cadê o Ônibus? — Sistema de Monitoramento e Rota (GTFS)</h1>
 <h4>O Cadê o Ônibus? é uma aplicação web desenvolvida para facilitar o planejamento de viagens e o monitoramento de frotas de ônibus na região de Luziânia (GO) e Distrito Federal. O projeto utiliza dados padronizados no formato GTFS (General Transit Feed Specification) para simular o movimento dos veículos e calcular as melhores rotas para os usuários.</h4>
-
+![Nome](https://github.com/Gabriela-S2/cade_o_onibus/blob/3b6dfbda77853c3a29b1e1e7a50dcd32f9a09ef7/Captura%20de%20tela%202026-02-06%20191210.png)
+![Nome](https://github.com/Gabriela-S2/cade_o_onibus/blob/3b6dfbda77853c3a29b1e1e7a50dcd32f9a09ef7/Captura%20de%20tela%202026-02-06%20191253.png)
 ## 🚀 Funcionalidades:
 * Monitoramento em Tempo Real (Simulado): Visualização dinâmica da posição dos ônibus no mapa com base nos horários estáticos do GTFS.
 * Planejador de Viagens Inteligente: Cálculo de rotas considerando o tempo de caminhada do usuário até a parada mais próxima e o horário de passagem do ônibus.
